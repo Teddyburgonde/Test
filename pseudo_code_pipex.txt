@@ -1,0 +1,24 @@
+
+
+- faire des recherches sur les functions ok! 
+
+
+- savoir ce que c'est quoi path dans les variables d'environnements
+
+- comment recuperer les variables d'environnement 
+
+( isoler chaqun des paths puis tester a partir de quel path on a le droit d'excuter les commandes )
+
+
+- tester les path absolu.
+- fork et excve
+- comment faire communiquer les deux process enfant et parents.
+
+
+
+- recuperer les variables d'environnement 
+
+
+
+
+

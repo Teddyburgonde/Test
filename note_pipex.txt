@@ -1,0 +1,33 @@
+Un fichier source -> infile (un nom donné aleatoirement)
+
+La sortie de cmd1 (la premiere commande) au lieu de sortir au niveau du terminal elle sera rediriger pour 
+devenir cmd2 (l'entree de la deuxieme commande).
+cela permet de chaîner ces commandes de maniere a traiter les donnees de maniere sequentielle. 
+
+Dans l'ordre 
+
+1 fork() Cree un nouveau processus identique au processus parent. 
+
+2.pipe() Cree un canal de communication(pipe) entre le processus parent
+et le processus enfant. Le pipe a une extremité pour ecrire (stdout du processus parent) 
+et une extremité pour lire (stdin du processus enfant). 
+
+3.dup2() Redirige la sortie standart (stdout) du processus parent vers l'extremité d'ecriture du pipe. 
+Cela permet au processus parent d'ecrire dans le pipe au lieu d'ecrire directement a l'ecran. 
+
+4.execve()(processus parent) : Remplace le code du processus parent par la premiere commande (cmd1). La sortie de cmd1 sera ecrite dans le pipe.
+
+5.execve()(processus enfant) : Remplace le code du processus enfant par la deuxieme commande cmd2. L'entree de cm2 sera lue depuis le pipe. 
+
+Ainsi la sortie de cmd1 (qui est ecrite dans le pipe apr le processus parent) devient l'entrée de cmd2 (qui lit depuis le pipe dans le processus enfant). 
+Cette sequence permet de chainer l'execution de deux commandes.  
+
+
+
+
+
+parsing (tout ce qui est pas bon)
+
+- argc == 5
+- est ce que j'ai le droit d'ouvrir les deux fichiers
+- initialiser la struct ( mettre ce que j'ai besoin dedans) 
